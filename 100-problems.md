@@ -27,7 +27,7 @@ Data Manipulation
 Probability
 -----------
 
-1. You have a suffled deck of 60 cards.  Three of these cards in the deck are marked with a diamond, and three of the cards are marked with a star.  You draw an initial hand of five cards, after which you *must* discard any of the star cards for an additional three cards from the top of the deck.  This process is repeated until you find yourself with a hand that does *not* contain any star cards.  Write a simulation to approximate the probability that your initial hand results in a resolved hand containing a diamond card. 
+1. You have a shuffled deck of 60 cards.  Three of these cards in the deck are marked with a diamond, and three of the cards are marked with a star.  You draw an initial hand of five cards, after which you *must* discard any of the star cards for an additional three cards from the top of the deck.  This process is repeated until you find yourself with a hand that does *not* contain any star cards.  Write a simulation to approximate the probability that your initial hand results in a resolved hand containing a diamond card. 
 
 1. Use a built in function which simulates draws from a uniform distribution (for example `numpy.random.uniform` in python, or `runif` in R) to generate samples from the exponential distribution with a given parameter.  To start, consider reading about the *inverse sampling method*.
 
@@ -41,8 +41,6 @@ The function should return the sampled `x` and `y` values.
 
 Statistics
 ----------
-
-1. Write a function that 
 
 1. Write a function that computes the p-value from a one tailed exact binomial test for a population proportion.  Your function should have the following signature:
 
@@ -75,7 +73,7 @@ To fit the regression, use a linear equation solver to explicitly solve the matr
 def logistic_accuracy(X_train, y_train, X_test, Y_test, thres)
 ```
 
-1. Fit a logistic regression and return the maximal profit that can be achieved by classifying predicted probabilities for observatings from a a test set.  The profits/costs of true/false positives and true/false negatives are supplied in a two by two `profit_matrix` (profits are positive numbers, costs are negative numbers).
+1. Fit a logistic regression and return the maximal profit that can be achieved by classifying predicted probabilities for observations from a test set.  The profits/costs of true/false positives and true/false negatives are supplied in a two by two `profit_matrix` (profits are positive numbers, costs are negative numbers).
 
 ```
 def logistic_profit(X_train, y_train, X_test, Y_test, profit_matrix)
@@ -84,7 +82,7 @@ def logistic_profit(X_train, y_train, X_test, Y_test, profit_matrix)
 Plotting
 --------
 
-1.  Using your function that creates sample data from a simple linear model, superimpose the true linear model onto a scatterplot of the gerenated data. 
+1.  Using your function that creates sample data from a simple linear model, superimpose the true linear model onto a scatterplot of the generated data. 
 
 SQL
 ---
