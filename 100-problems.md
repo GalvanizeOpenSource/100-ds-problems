@@ -24,6 +24,29 @@ Data Manipulation
 
 1. Given a matrix `M`, create a new matrix containing only the *columns* of `M` where at least one of the entries is negative.
 
+1. Write a function that swaps two rows of a matrix:
+
+```
+def swap_rows(M, i, j)
+```
+
+1. Write a function that creates a square matrix with a checkerboard pattern of 0's and 1's of any given size.
+
+```
+[
+  [1, 0, 1, 0, 1],
+  [0, 1, 0, 1, 0],
+  [1, 0, 1, 0, 1],
+  [0, 1, 0, 1, 0],
+  [1, 0, 1, 0, 1],
+]
+```
+
+1. Write a function that takes *any* number of matrices, and determines if they can be multiplied in the order passed.
+
+1. Write a function that converts an `n * 2` shaped array representing Cartesian coordinates of `n` points into an `n * 2` array of polar coordinates.
+
+
 Probability
 -----------
 
@@ -86,3 +109,10 @@ Plotting
 
 SQL
 ---
+
+Web Programming
+---------------
+
+1. Read the leaderboard for [Super Metroid](http://deertier.com/Leaderboard/AnyPercentRealTime) completion times into a data frame.
+
+1. Using the leaderboards for [Ocarana of Time](http://zeldaspeedruns.com/leaderboards/oot/any), scrape data and then plot the progression of the world record over time.  Note that you can follow the hyperlink for any players name to see all of their submitted times.
