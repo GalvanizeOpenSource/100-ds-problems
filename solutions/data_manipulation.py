@@ -62,3 +62,59 @@ def find_smallest_angle(x, M):
     distances = M.dot(x) / (np.linalg.norm(x) * np.linalg.norm(M, axis=1))
     row_i = distances.argmax()
     return row_i, M[row_i]
+
+def offset_diagonals(n):
+    """Return matrix with ones on the diagonals above and below main diagonal.
+
+    Matrix is a square matrix of shape (n, n).
+
+    Parameters
+    ----------
+    n: int
+        The dimensions of the returned matrix.
+
+    Returns
+    -------
+    final_matrix: numpy array, shape = (n, n)
+        Square matrix with ones on diagonals above and below main diagonal.
+    """
+    final_matrix = np.zeros((n,n))
+    diag_indices1 = np.arange(0, n-1)
+    diag_indices2 = np.arange(1, n)
+    final_matrix[(diag_indices1, diag_indices2)] = 1
+    final_matrix[(diag_indices2, diag_indices1)] = 1
+    return final_matrix
+
+def cols_with_neg_value(M):
+    """Return matrix made of the cols of M where at least one value is <0.
+
+    Parameters
+    ----------
+    M: numpy array
+
+    Returns
+    -------
+    numpy array
+        Matrix containing only cols of M where at least one value is negative.
+    """
+    return M[:, np.min(M, axis=0) < 0]
+
+def swap_rows(M, i, j):
+    """Swap the row i with row j in M.
+
+    Modifies M in-place!
+
+    Parameters
+    ----------
+    M: numpy array
+        A matrix of data.
+    i: int
+        Index of first row
+    j: int
+        Index of second row
+
+    Returns
+    -------
+    None
+    """
+    M[[i, j]] = M[[j, i]]
