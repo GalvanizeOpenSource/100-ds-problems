@@ -40,7 +40,7 @@ def compute_part_mean(x, b):
     """
     return x[b == 0].mean(), x[b == 1].mean()
 
-def calc_angle(x, M):
+def find_smallest_angle(x, M):
     """Return the row in M that has the smallest angle with x.
 
     The number of columns in M must equal the length of x.
@@ -59,8 +59,6 @@ def calc_angle(x, M):
     row: numpy array
         The row from M that has the smallest angle with x.
     """
-    distances = np.zeros((M.shape[0], 1))
-    for i, row in enumerate(M):
-        distances[i] = x.dot(row) / (np.linalg.norm(x) * np.linalg.norm(row))
+    distances = M.dot(x) / (np.linalg.norm(x) * np.linalg.norm(M, axis=1))
     row_i = distances.argmax()
     return row_i, M[row_i]
