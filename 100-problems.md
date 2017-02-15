@@ -4,11 +4,21 @@
 Data Manipulation
 -----------------
 
-1. Given an array of 0's and 1's, write a function that creates a new array where 0's are replaced with the word `"red"` and 1's are replaced with the word `"blue"`.
+1. Given an integer numpy array of 0's and 1's, write a function that creates a new array where 0's are replaced with the word `"red"` and 1's are replaced with the word `"blue"`.
+
+```
+np.array([0, 0, 1, 0, 1]) => np.array(["red", "red", "blue", "red", "blue"])
+```
 
 1. Given two equal length arrays, `x` with general numeric data, and `b` with only 0's and 1's, compute the mean of the data in `x` at the positions where `b == 0` and the mean of the data in `x` at the positions where `b == 1`.
 
-1. Given a vector `x`, and a matrix `M` with the same number of columns as the length of `x`, find the row in `M` that makes the smallest angle with `x`.
+```
+x = np.array([1, 2, 3, 4, 5])
+b = np.array([1, 1, 0, 0, 1])
+    => {0: 3.5, 1: 4}
+```
+
+1. Given an array `x`, and a matrix `M` (two dimensional array) with the same number of columns as the length of `x`, find the row in `M` that makes the smallest angle with `x`.
 
 1. Given a number `n`, create a matrix of zeros, but with ones on the diagonals immediately below and above the main diagonal.  For example, when `n=5`, you should create the following matrix
 
@@ -44,23 +54,31 @@ def swap_rows(M, i, j)
 
 1. Write a function that takes *any* number of matrices, and determines if they can be multiplied in the order passed.
 
-1. Write a function that converts an `n * 2` shaped array representing Cartesian coordinates of `n` points into an `n * 2` array of polar coordinates.
+1. Write a function that converts an  array of shape `(n, 2)` representing Cartesian coordinates of `n` points into a new `(n, 2)` array containing the polar coordinates of those points.
 
+```
+np.array([[0, 1], [1, 0], [1, 1]])
+    => np.array([1, np.pi], [1, 0], [np.sqrt(2), np.pi / 2])
+```
 
 Probability
 -----------
 
-1. You have a shuffled deck of 60 cards.  Three of these cards in the deck are marked with a diamond, and three of the cards are marked with a star.  You draw an initial hand of five cards, after which you *must* discard any of the star cards for an additional three cards from the top of the deck.  This process is repeated until you find yourself with a hand that does *not* contain any star cards.  Write a simulation to approximate the probability that your initial hand results in a resolved hand containing a diamond card. 
+1. You have a shuffled deck of 60 cards containing the following cards of special interest.  
+  - Three of these cards in the deck are marked with a diamond.
+  - Three of the cards are marked with a star.  
+  - The remaining cards are nothing special.
+You draw an initial hand of five cards, after which you *must* discard any of the star cards for an additional three cards drawn from the top of the deck.  This process is repeated until you find yourself with a hand that does *not* contain any star cards.  Write a simulation to approximate the probability that your initial draw results in a final hand containing a diamond card. 
 
-1. Use a built in function which simulates draws from a uniform distribution (for example `numpy.random.uniform` in python, or `runif` in R) to generate samples from the exponential distribution with a given parameter.  To start, consider reading about the *inverse sampling method*.
+1. Use a built in function which samples data from a uniform distribution (for example `np.random.uniform` in python), to generate samples from the exponential distribution with a given parameter.  To start, consider reading about the [inverse sampling method](https://en.wikipedia.org/wiki/Inverse_transform_sampling).  Plot a histogram of data sampled using your code, and overlay the density function of an exponential distribution.
 
-1. Write a function that samples random data from a true simple linear model with a given intercept, slope, and residual standard deviation.  To generate `x` data, your function should accept a function that can be called to generate this data:
+1. Write a function that samples random data from a true simple linear model with a given intercept, slope, and residual standard deviation.  Your function should additionally consume an array `x` containing data for the independent variable of the model:
 
 ```
-def generate_simple_linear_data(x_sampler, intercept, slope, residual_sd):
+def generate_simple_linear_data(x, intercept, slope, residual_sd):
 ```
 
-The function should return the sampled `x` and `y` values.
+The function should return the sampled `y` values.
 
 Statistics
 ----------
@@ -68,8 +86,17 @@ Statistics
 1. Write a function that computes the p-value from a one tailed exact binomial test for a population proportion.  Your function should have the following signature:
 
 ```
-def binomial_exact_test(n_samples, n_positive_samples)
+def binomial_exact_test(n_samples, n_positive_samples, proposed_value)
 ```
+
+And should compute the p-value of the following test:
+
+```
+H_0: p = proposed_value
+h_a: p > proposed_value
+```
+
+Where `p` is the population proportion.
 
 You may utilize a built in function that computes the pmf or cmf of the Binomial distribution.
 
@@ -88,7 +115,7 @@ class LinearRegression(object):
         pass
 ```
 
-To fit the regression, use a linear equation solver to explicitly solve the matrix equation `X^t X = X^t y`.
+To fit the regression, use a linear equation solver to explicitly solve the matrix equation `X^t X beta = X^t y` for beta.
 
 1. Fit a logistic regression to `X_train` and `y_train`, then compute and return the proportion of data in `X_test` and `y_test` that are correctly classified when threasholding the predicted probabilities with `threas`.
 
@@ -115,4 +142,4 @@ Web Programming
 
 1. Read the leaderboard for [Super Metroid](http://deertier.com/Leaderboard/AnyPercentRealTime) completion times into a data frame.
 
-1. Using the leaderboards for [Ocarana of Time](http://zeldaspeedruns.com/leaderboards/oot/any), scrape data and then plot the progression of the world record over time.  Note that you can follow the hyperlink for any players name to see all of their submitted times.
+1. Using the leaderboards for [Ocarina of Time](http://zeldaspeedruns.com/leaderboards/oot/any), scrape data and then plot the progression of the world record over time.  That is, for each possible day, calculate the fasted submitted time up to that day.  Note that the leaderboard itself does not contain all submitted times, only the fasted submitted time for each user.  Following the hyperlink for each user in the leaderboard table will show you all the times submitted for that user, some of which may have stood as a world record in the past. 
