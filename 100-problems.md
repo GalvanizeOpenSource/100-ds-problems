@@ -1,6 +1,24 @@
 100 Data Science Programming Problems
 =====================================
 
+
+General Programming
+-------------------
+
+1. Write a function that converts a dictionary of equal length lists into a list of dictionaries.
+
+```
+{'a': [1, 2, 3], 'b': [3, 2, 1]}
+  => [{'a': 1, 'b': 3}, {'a': 2, 'b': 2}, {'a': 3, 'b': 1}]
+```
+
+1. Write the inverse function to the previous problem, convert a list of dictionaries into a dictionary of equal length lists.
+
+```
+[{'a': 1, 'b': 3}, {'a': 2, 'b': 2}, {'a': 3, 'b': 1}]
+  => {'a': [1, 2, 3], 'b': [3, 2, 1]}
+```
+
 Data Manipulation
 -----------------
 
@@ -60,6 +78,14 @@ def swap_rows(M, i, j)
 np.array([[0, 1], [1, 0], [1, 1]])
     => np.array([1, np.pi], [1, 0], [np.sqrt(2), np.pi / 2])
 ```
+
+1. Given a `(n, 3)` matrix of points (each point is represented by one row, and has three coordinates), and an additional vector with three coordinates, return an `(n, 2)` matrix representing the projection of the original points onto the plane orthogonal to the vector.
+
+```
+project_orthogonal_to_vector(matrix, vector)
+```
+
+Is this problem fully specified?  Do you have to make any choices to accomplish this task?
 
 Probability
 -----------
@@ -133,6 +159,24 @@ Plotting
 --------
 
 1.  Using your function that creates sample data from a simple linear model, superimpose the true linear model onto a scatterplot of the generated data. 
+
+1. Create a (2, 3) grid of plots.  Inside each plot display the coordinates of the plot, like so:
+
+```
++----------+----------+----------+
+|  (0, 0)  |  (0, 1)  |  (0, 2)  |
++----------+----------+----------+
+|  (1, 0)  |  (1, 1)  |  (1, 2)  |
++----------+----------+----------+
+```
+
+1. Given a list pairs of ordered paris, like so:
+
+```
+[[(0, 1), (1, 0)], [(1, 1), (2, 2)], [(-1, 0), (0, -1)]]
+```
+
+Plot each of them as vectors (as in, a picture of an arrow) whose tail is at the first coordinate, and whose head is at the second.
 
 SQL
 ---
