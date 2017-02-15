@@ -19,6 +19,16 @@ General Programming
   => {'a': [1, 2, 3], 'b': [3, 2, 1]}
 ```
 
+1. Given a list of numbers representing the coefficients in a polynomial (largest powers first), write a function that returns a pretty string representation of the polynomial.
+
+```
+[1, 1, 1] => "x^2 + x + 1"
+[2, -1, -2] => "2x^2 - x -2"
+[0, 9, -10] => "9x - 10"
+```
+
+Pay attention to edge cases!
+
 Data Manipulation
 -----------------
 
@@ -155,6 +165,30 @@ def logistic_accuracy(X_train, y_train, X_test, Y_test, thres)
 def logistic_profit(X_train, y_train, X_test, Y_test, profit_matrix)
 ```
 
+
+Algorithms
+----------
+
+1. Given the following data:
+
+  - A function `f: np.array => float` that maps a numpy array to a floating point number.
+  - A function `df: np.array => np.array` that maps a numpy array to another numpy array, this is the gradient of `f`.
+  - An initial point `_0x`, stored as a numpy array.
+  - A learning rate `learning_rate`, a floating point number.
+  - A `tolerance`, floating point number.
+
+Write an iterator `gradient_descent` (i.e. like a function, but uses `yield`) that generates the sequence of points by applying gradiend descent to the function `f`, starting at the initial point `x_0`, with the learning rate `learning_rate`, until the convergence tolerance `tolerance` is met.
+
+```
+gradient_descent(f, df, x_0, learning_rate=0.01, tolerance=0.01)
+```
+
+2. In the same situation of the previous problem, except with the extra data
+
+  - A function `ddf: np.array => np.array` that maps a numpy array to a matrix, this is the second derivative of `f`.
+
+Write an iterator that generates a sequence of points by applying Newton's method.  Try *not* to explicitly invert a matrix, use `np.linalg.solve` instead.
+
 Plotting
 --------
 
@@ -186,4 +220,4 @@ Web Programming
 
 1. Read the leaderboard for [Super Metroid](http://deertier.com/Leaderboard/AnyPercentRealTime) completion times into a data frame.
 
-1. Using the leaderboards for [Ocarina of Time](http://zeldaspeedruns.com/leaderboards/oot/any), scrape data and then plot the progression of the world record over time.  That is, for each possible day, calculate the fasted submitted time up to that day.  Note that the leaderboard itself does not contain all submitted times, only the fasted submitted time for each user.  Following the hyperlink for each user in the leaderboard table will show you all the times submitted for that user, some of which may have stood as a world record in the past. 
+1. Using the leaderboards for [Ocarina of Time](http://zeldaspeedruns.com/leaderboards/oot/any), scrape data and then plot the progression of the world record over time.  That is, for each possible day, calculate the fastest submitted time up to that day.  Note that the leaderboard itself does not contain all submitted times, only the fastest submitted time for each user.  Following the hyperlink for each user in the leaderboard table will show you all the times submitted for that user, some of which may have stood as a world record in the past. 
