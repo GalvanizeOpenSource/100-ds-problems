@@ -86,6 +86,8 @@ def list_to_dict(list_of_dicts):
 
 def list_to_poly(polynomial_list):
     """
+    Create pretty string representation from list of polynomials.
+
     Convert a list of numbers representing the coefficients in a polynomial
     into a pretty representation of the polynomial.
 
