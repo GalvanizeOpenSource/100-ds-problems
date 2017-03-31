@@ -1,3 +1,5 @@
+"""Solutions to Data Manipulation section of 100 DS questions set."""
+
 import numpy as np
 
 
@@ -19,6 +21,7 @@ def num_to_color(arr):
     color_arr = np.array(['red', 'blue'])
     return color_arr[arr]
 
+
 def compute_part_mean(x, b):
     """Return the mean of x where b == 0 and the mean of x where b == 1.
 
@@ -39,6 +42,7 @@ def compute_part_mean(x, b):
         Mean of X at the indeices where b == 1.
     """
     return x[b == 0].mean(), x[b == 1].mean()
+
 
 def find_smallest_angle(x, M):
     """Return the row in M that has the smallest angle with x.
@@ -63,6 +67,7 @@ def find_smallest_angle(x, M):
     row_i = distances.argmax()
     return row_i, M[row_i]
 
+
 def offset_diagonals(n):
     """Return matrix with ones on the diagonals above and below main diagonal.
 
@@ -78,12 +83,13 @@ def offset_diagonals(n):
     final_matrix: numpy array, shape = (n, n)
         Square matrix with ones on diagonals above and below main diagonal.
     """
-    final_matrix = np.zeros((n,n))
+    final_matrix = np.zeros((n, n))
     diag_indices1 = np.arange(0, n-1)
     diag_indices2 = np.arange(1, n)
     final_matrix[(diag_indices1, diag_indices2)] = 1
     final_matrix[(diag_indices2, diag_indices1)] = 1
     return final_matrix
+
 
 def cols_with_neg_value(M):
     """Return matrix made of the cols of M where at least one value is <0.
@@ -98,6 +104,7 @@ def cols_with_neg_value(M):
         Matrix containing only cols of M where at least one value is negative.
     """
     return M[:, np.min(M, axis=0) < 0]
+
 
 def swap_rows(M, i, j):
     """Swap the row i with row j in M.
