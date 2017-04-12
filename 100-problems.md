@@ -7,95 +7,95 @@ General Programming
 
 1. Write a function that converts a dictionary of equal length lists into a list of dictionaries.
 
-```
-{'a': [1, 2, 3], 'b': [3, 2, 1]}
-  => [{'a': 1, 'b': 3}, {'a': 2, 'b': 2}, {'a': 3, 'b': 1}]
-```
+    ```
+    {'a': [1, 2, 3], 'b': [3, 2, 1]}
+    => [{'a': 1, 'b': 3}, {'a': 2, 'b': 2}, {'a': 3, 'b': 1}]
+    ```
 
 1. Write the inverse function to the previous problem, convert a list of dictionaries into a dictionary of equal length lists.
 
-```
-[{'a': 1, 'b': 3}, {'a': 2, 'b': 2}, {'a': 3, 'b': 1}]
-  => {'a': [1, 2, 3], 'b': [3, 2, 1]}
-```
+    ```
+    [{'a': 1, 'b': 3}, {'a': 2, 'b': 2}, {'a': 3, 'b': 1}]
+    => {'a': [1, 2, 3], 'b': [3, 2, 1]}
+    ```
 
 1. Given a list of numbers representing the coefficients in a polynomial (largest powers first), write a function that returns a pretty string representation of the polynomial.
 
-```
-[1, 1, 1] => "x^2 + x + 1"
-[2, -1, -2] => "2x^2 - x -2"
-[0, 9, -10] => "9x - 10"
-```
+    ```
+    [1, 1, 1] => "x^2 + x + 1"
+    [2, -1, -2] => "2x^2 - x -2"
+    [0, 9, -10] => "9x - 10"
+    ```
 
-Pay attention to edge cases!
+    Pay attention to edge cases!
 
 Data Manipulation
 -----------------
 
 1. Given an integer numpy array of 0's and 1's, write a function that creates a new array where 0's are replaced with the word `"red"` and 1's are replaced with the word `"blue"`.
 
-```
-np.array([0, 0, 1, 0, 1]) => np.array(["red", "red", "blue", "red", "blue"])
-```
+    ```
+    np.array([0, 0, 1, 0, 1]) => np.array(["red", "red", "blue", "red", "blue"])
+    ```
 
 1. Given two equal length arrays, `x` with general numeric data, and `b` with only 0's and 1's, compute the mean of the data in `x` at the positions where `b == 0` and the mean of the data in `x` at the positions where `b == 1`.
 
-```
-x = np.array([1, 2, 3, 4, 5])
-b = np.array([1, 1, 0, 0, 1])
-    => {0: 3.5, 1: 4}
-```
+    ```
+    x = np.array([1, 2, 3, 4, 5])
+    b = np.array([1, 1, 0, 0, 1])
+        => {0: 3.5, 1: 4}
+    ```
 
 1. Given an array `x`, and a matrix `M` (two dimensional array) with the same number of columns as the length of `x`, find the row in `M` that makes the smallest angle with `x`.
 
 1. Given a number `n`, create a matrix of zeros, but with ones on the diagonals immediately below and above the main diagonal.  For example, when `n=5`, you should create the following matrix
 
-```
-[
-  [0, 1, 0, 0, 0],
-  [1, 0, 1, 0, 0],
-  [0, 1, 0, 1, 0],
-  [0, 0, 1, 0, 1],
-  [0, 0, 0, 1, 0]
-]
-```
+    ```
+    [
+    [0, 1, 0, 0, 0],
+    [1, 0, 1, 0, 0],
+    [0, 1, 0, 1, 0],
+    [0, 0, 1, 0, 1],
+    [0, 0, 0, 1, 0]
+    ]
+    ```
 
 1. Given a matrix `M`, create a new matrix containing only the *columns* of `M` where at least one of the entries is negative.
 
 1. Write a function that swaps two rows of a matrix:
 
-```
-def swap_rows(M, i, j)
-```
+    ```
+    def swap_rows(M, i, j)
+    ```
 
 1. Write a function that creates a square matrix with a checkerboard pattern of 0's and 1's of any given size.
 
-```
-[
-  [1, 0, 1, 0, 1],
-  [0, 1, 0, 1, 0],
-  [1, 0, 1, 0, 1],
-  [0, 1, 0, 1, 0],
-  [1, 0, 1, 0, 1],
-]
-```
+    ```
+    [
+    [1, 0, 1, 0, 1],
+    [0, 1, 0, 1, 0],
+    [1, 0, 1, 0, 1],
+    [0, 1, 0, 1, 0],
+    [1, 0, 1, 0, 1],
+    ]
+    ```
 
 1. Write a function that takes *any* number of matrices, and determines if they can be multiplied in the order passed.
 
 1. Write a function that converts an  array of shape `(n, 2)` representing Cartesian coordinates of `n` points into a new `(n, 2)` array containing the polar coordinates of those points.
 
-```
-np.array([[0, 1], [1, 0], [1, 1]])
-    => np.array([1, np.pi], [1, 0], [np.sqrt(2), np.pi / 2])
-```
+    ```
+    np.array([[0, 1], [1, 0], [1, 1]])
+        => np.array([1, np.pi], [1, 0], [np.sqrt(2), np.pi / 2])
+    ```
 
 1. Given a `(n, 3)` matrix of points (each point is represented by one row, and has three coordinates), and an additional vector with three coordinates, return an `(n, 2)` matrix representing the projection of the original points onto the plane orthogonal to the vector.
 
-```
-project_orthogonal_to_vector(matrix, vector)
-```
+    ```
+    project_orthogonal_to_vector(matrix, vector)
+    ```
 
-Is this problem fully specified?  Do you have to make any choices to accomplish this task?
+    Is this problem fully specified?  Do you have to make any choices to accomplish this task?
 
 Probability
 -----------
@@ -104,66 +104,66 @@ Probability
   - Three of these cards in the deck are marked with a diamond.
   - Three of the cards are marked with a star.  
   - The remaining cards are nothing special.
-You draw an initial hand of five cards, after which you *must* discard any of the star cards for an additional three cards drawn from the top of the deck.  This process is repeated until you find yourself with a hand that does *not* contain any star cards.  Write a simulation to approximate the probability that your initial draw results in a final hand containing a diamond card. 
+    You draw an initial hand of five cards, after which you *must* discard any of the star cards for an additional three cards drawn from the top of the deck.  This process is repeated until you find yourself with a hand that does *not* contain any star cards.  Write a simulation to approximate the probability that your initial draw results in a final hand containing a diamond card. 
 
 1. Use a built in function which samples data from a uniform distribution (for example `np.random.uniform` in python), to generate samples from the exponential distribution with a given parameter.  To start, consider reading about the [inverse sampling method](https://en.wikipedia.org/wiki/Inverse_transform_sampling).  Plot a histogram of data sampled using your code, and overlay the density function of an exponential distribution.
 
 1. Write a function that samples random data from a true simple linear model with a given intercept, slope, and residual standard deviation.  Your function should additionally consume an array `x` containing data for the independent variable of the model:
 
-```
-def generate_simple_linear_data(x, intercept, slope, residual_sd):
-```
+    ```
+    def generate_simple_linear_data(x, intercept, slope, residual_sd):
+    ```
 
-The function should return the sampled `y` values.
+    The function should return the sampled `y` values.
 
 Statistics
 ----------
 
 1. Write a function that computes the p-value from a one tailed exact binomial test for a population proportion.  Your function should have the following signature:
 
-```
-def binomial_exact_test(n_samples, n_positive_samples, proposed_value)
-```
+    ```
+    def binomial_exact_test(n_samples, n_positive_samples, proposed_value)
+    ```
 
-And should compute the p-value of the following test:
+    And should compute the p-value of the following test:
 
-```
-H_0: p = proposed_value
-h_a: p > proposed_value
-```
+    ```
+    H_0: p = proposed_value
+    h_a: p > proposed_value
+    ```
 
-Where `p` is the population proportion.
+    Where `p` is the population proportion.
 
-You may utilize a built in function that computes the pmf or cmf of the Binomial distribution.
+    You may utilize a built in function that computes the pmf or cmf of the Binomial distribution.
 
 1. Write a linear regression class with the following methods:
 
-```
-class LinearRegression(object):
+    ```
+    class LinearRegression(object):
 
-    def __init__(self):
-        self.coeffs_ = None
+        def __init__(self):
+            self.coeffs_ = None
 
-    def fit(X, y):
-        pass
+        def fit(X, y):
+            pass
 
-    def predict(X):
-        pass
-```
+        def predict(X):
+            pass
+    ```
 
-To fit the regression, use a linear equation solver to explicitly solve the matrix equation `X^t X beta = X^t y` for beta.
+    To fit the regression, use a linear equation solver to explicitly solve the matrix equation `X^t X beta = X^t y` for beta.
 
 1. Fit a logistic regression to `X_train` and `y_train`, then compute and return the proportion of data in `X_test` and `y_test` that are correctly classified when threasholding the predicted probabilities with `threas`.
 
-```
-def logistic_accuracy(X_train, y_train, X_test, Y_test, thres)
-```
+    ```
+    def logistic_accuracy(X_train, y_train, X_test, Y_test, thres)
+    ```
 
 1. Fit a logistic regression and return the maximal profit that can be achieved by classifying predicted probabilities for observations from a test set.  The profits/costs of true/false positives and true/false negatives are supplied in a two by two `profit_matrix` (profits are positive numbers, costs are negative numbers).
 
-```
-def logistic_profit(X_train, y_train, X_test, Y_test, profit_matrix)
-```
+    ```
+    def logistic_profit(X_train, y_train, X_test, Y_test, profit_matrix)
+    ```
 
 
 Algorithms
@@ -177,17 +177,17 @@ Algorithms
   - A learning rate `learning_rate`, a floating point number.
   - A `tolerance`, floating point number.
 
-Write an iterator `gradient_descent` (i.e. like a function, but uses `yield`) that generates the sequence of points by applying gradiend descent to the function `f`, starting at the initial point `x_0`, with the learning rate `learning_rate`, until the convergence tolerance `tolerance` is met.
+    Write an iterator `gradient_descent` (i.e. like a function, but uses `yield`) that generates the sequence of points by applying gradiend descent to the function `f`, starting at the initial point `x_0`, with the learning rate `learning_rate`, until the convergence tolerance `tolerance` is met.
 
-```
-gradient_descent(f, df, x_0, learning_rate=0.01, tolerance=0.01)
-```
+    ```
+    gradient_descent(f, df, x_0, learning_rate=0.01, tolerance=0.01)
+    ```
 
 2. In the same situation of the previous problem, except with the extra data
 
   - A function `ddf: np.array => np.array` that maps a numpy array to a matrix, this is the second derivative of `f`.
 
-Write an iterator that generates a sequence of points by applying Newton's method.  Try *not* to explicitly invert a matrix, use `np.linalg.solve` instead.
+    Write an iterator that generates a sequence of points by applying Newton's method.  Try *not* to explicitly invert a matrix, use `np.linalg.solve` instead.
 
 Plotting
 --------
@@ -196,21 +196,21 @@ Plotting
 
 1. Create a (2, 3) grid of plots.  Inside each plot display the coordinates of the plot, like so:
 
-```
-+----------+----------+----------+
-|  (0, 0)  |  (0, 1)  |  (0, 2)  |
-+----------+----------+----------+
-|  (1, 0)  |  (1, 1)  |  (1, 2)  |
-+----------+----------+----------+
-```
+    ```
+    +----------+----------+----------+
+    |  (0, 0)  |  (0, 1)  |  (0, 2)  |
+    +----------+----------+----------+
+    |  (1, 0)  |  (1, 1)  |  (1, 2)  |
+    +----------+----------+----------+
+    ```
 
 1. Given a list pairs of ordered paris, like so:
 
-```
-[[(0, 1), (1, 0)], [(1, 1), (2, 2)], [(-1, 0), (0, -1)]]
-```
+    ```
+    [[(0, 1), (1, 0)], [(1, 1), (2, 2)], [(-1, 0), (0, -1)]]
+    ```
 
-Plot each of them as vectors (as in, a picture of an arrow) whose tail is at the first coordinate, and whose head is at the second.
+    Plot each of them as vectors (as in, a picture of an arrow) whose tail is at the first coordinate, and whose head is at the second.
 
 SQL
 ---
