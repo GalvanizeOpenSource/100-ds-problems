@@ -97,6 +97,8 @@ project_orthogonal_to_vector(matrix, vector)
 
 Is this problem fully specified?  Do you have to make any choices to accomplish this task?
 
+1. Write a function that takes two numpy arrays of shapes (n, k) and (m, k), representing points in k-dimensional space, and returns an array of shape (n, m) giving the Euclidean distance between each point in the first array and each point in the second. Try to write it without any loops.
+
 Probability
 -----------
 
