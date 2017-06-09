@@ -112,6 +112,8 @@ You draw an initial hand of five cards, after which you *must* discard any of th
 
 1. Write a function that samples random data from a true simple linear model with a given intercept, slope, and residual standard deviation.  Your function should additionally consume an array `x` containing data for the independent variable of the model:
 
+1. You visit a website that provides amusing data-science jokes. Each time you visit it displays a joke randomly choosen from a finite set. Over the course of four visits, you see three unique jokes and one repeat. Using maximum likelihood estimation, estimate the total number of jokes on the website.
+
 ```
 def generate_simple_linear_data(x, intercept, slope, residual_sd):
 ```
