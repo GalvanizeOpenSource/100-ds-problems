@@ -19,7 +19,7 @@ General Programming
     => {'a': [1, 2, 3], 'b': [3, 2, 1]}
     ```
 
-1. Given two lists of characters with the same length, write a function that returns a list of booleans, also of the same length.  The value in the return list should be True if *either* of the charectes in the two lists at that index are vowles, otherwise it should return false.
+1. Given two lists of characters with the same length, write a function that returns a list of booleans, also of the same length.  The value in the return list should be True if *either* of the characters in the two lists at that index are vowels, otherwise it should return false.
 
    ```
    (['a', 'b', 'c', 'd', 'e'], ['v', 'w', 'x', 'y', 'z'])
@@ -33,7 +33,7 @@ General Programming
    => {'a': ['a', 'an'], 'b': ['bearing'], 'i': ['important'], 's': ['special', 'string', 'salutation']}
    ```
 
-1. Write a function that reads lines from two files, and writes out a new file.  You may assume that each line in the input files contain a single word.  The output file should have the words concatinated with a comma, but the two words on each line should be in alphabetical order.  If the input files have different lengths, write single words to the output file until the longer file is exhausted.
+1. Write a function that reads lines from two files, and writes out a new file.  You may assume that each line in the input files contain a single word.  The output file should have the words concatenated with a comma, but the two words on each line should be in alphabetical order.  If the input files have different lengths, write single words to the output file until the longer file is exhausted.
 
     ```
     File 1:  File2:
@@ -70,16 +70,16 @@ General Programming
 
     Pay attention to edge cases!
 
-Data Manipulation
------------------
+Data Manipulation - Numpy
+-------------------------
 
-1. (Numpy) Given an integer numpy array of 0's and 1's, write a function that creates a new array where 0's are replaced with the word `"red"` and 1's are replaced with the word `"blue"`.
+1.  Given an integer numpy array of 0's and 1's, write a function that creates a new array where 0's are replaced with the word `"red"` and 1's are replaced with the word `"blue"`.
 
     ```
     np.array([0, 0, 1, 0, 1]) => np.array(["red", "red", "blue", "red", "blue"])
     ```
 
-1. (Numpy) Given two equal length arrays, `x` with general numeric data, and `b` with only 0's and 1's, compute the mean of the data in `x` at the positions where `b == 0` and the mean of the data in `x` at the positions where `b == 1`.
+1.  Given two equal length arrays, `x` with general numeric data, and `b` with only 0's and 1's, compute the mean of the data in `x` at the positions where `b == 0` and the mean of the data in `x` at the positions where `b == 1`.
 
     ```
     x = np.array([1, 2, 3, 4, 5])
@@ -87,9 +87,9 @@ Data Manipulation
         => {0: 3.5, 1: 4}
     ```
 
-1. (Numpy) Given an array `x`, and a matrix `M` (two dimensional array) with the same number of columns as the length of `x`, find the row in `M` that makes the smallest angle with `x`.
+1.  Given an array `x`, and a matrix `M` (two dimensional array) with the same number of columns as the length of `x`, find the row in `M` that makes the smallest angle with `x`.
 
-1. Numpy) Given a number `n`, create a matrix of zeros, but with ones on the diagonals immediately below and above the main diagonal.  For example, when `n=5`, you should create the following matrix
+1.  Given a number `n`, create a matrix of zeros, but with ones on the diagonals immediately below and above the main diagonal.  For example, when `n=5`, you should create the following matrix
 
     ```
     [
@@ -101,15 +101,15 @@ Data Manipulation
     ]
     ```
 
-1. Given a matrix `M`, create a new matrix containing only the *columns* of `M` where at least one of the entries is negative.
+1.  Given a matrix `M`, create a new matrix containing only the *columns* of `M` where at least one of the entries is negative.
 
-1. Write a function that swaps two rows of a matrix:
+1.  Write a function that swaps two rows of a matrix:
 
     ```
     def swap_rows(M, i, j)
     ```
 
-1. Write a function that creates a square matrix with a checkerboard pattern of 0's and 1's of any given size.
+1.  Write a function that creates a square matrix with a checkerboard pattern of 0's and 1's of any given size.
 
     ```
     [
@@ -121,16 +121,16 @@ Data Manipulation
     ]
     ```
 
-1. Write a function that takes *any* number of matrices, and determines if they can be multiplied in the order passed.
+1.  Write a function that takes *any* number of matrices, and determines if they can be multiplied in the order passed.
 
-1. Write a function that converts an  array of shape `(n, 2)` representing Cartesian coordinates of `n` points into a new `(n, 2)` array containing the polar coordinates of those points.
+1.  Write a function that converts an  array of shape `(n, 2)` representing Cartesian coordinates of `n` points into a new `(n, 2)` array containing the polar coordinates of those points.
 
     ```
     np.array([[0, 1], [1, 0], [1, 1]])
         => np.array([1, np.pi], [1, 0], [np.sqrt(2), np.pi / 2])
     ```
 
-1. Given a `(n, 3)` matrix of points (each point is represented by one row, and has three coordinates), and an additional vector with three coordinates, return an `(n, 2)` matrix representing the projection of the original points onto the plane orthogonal to the vector.
+1.  Given a `(n, 3)` matrix of points (each point is represented by one row, and has three coordinates), and an additional vector with three coordinates, return an `(n, 2)` matrix representing the projection of the original points onto the plane orthogonal to the vector.
 
     ```
     project_orthogonal_to_vector(matrix, vector)
@@ -138,7 +138,17 @@ Data Manipulation
 
     Is this problem fully specified?  Do you have to make any choices to accomplish this task?
 
-1. Write a function that takes two numpy arrays of shapes (n, k) and (m, k), representing points in k-dimensional space, and returns an array of shape (n, m) giving the Euclidean distance between each point in the first array and each point in the second. Try to write it without any loops.
+1.  Write a function that takes two numpy arrays of shapes (n, k) and (m, k), representing points in k-dimensional space, and returns an array of shape (n, m) giving the Euclidean distance between each point in the first array and each point in the second. Try to write it without any loops.
+
+
+Data Manipulation - Pandas
+--------------------------
+
+1. You have a pandas DataFrame `berries` which contains columns `type` and `size`.  Select all the (rows representing) blueberries larger than 0.5 cm in size.
+
+1. You have a pandas DataFrame `berries` which contains columns `type` and `size`.  Create a dataframe containing the largest berry of each size.
+
+1. You have a pandas DataFrame containing observations of stock prices over time, it contains columns `stock`, `day` and `price`.  Create a data frame that contains the stock price for each stock on the *day after* they achieve their maximum price.
 
 Probability
 -----------
