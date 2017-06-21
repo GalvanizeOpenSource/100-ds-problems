@@ -19,6 +19,47 @@ General Programming
     => {'a': [1, 2, 3], 'b': [3, 2, 1]}
     ```
 
+1. Given two lists of characters with the same length, write a function that returns a list of booleans, also of the same length.  The value in the return list should be True if *either* of the charectes in the two lists at that index are vowles, otherwise it should return false.
+
+   ```
+   (['a', 'b', 'c', 'd', 'e'], ['v', 'w', 'x', 'y', 'z'])
+   => [True, False, False, False, True]
+   ```
+
+1. Write a function that takes a string, and returns a dictionary that keys a list of words in the string according to the first letter in the word.
+
+   ```
+   "a special string bearing an important salutation"
+   => {'a': ['a', 'an'], 'b': ['bearing'], 'i': ['important'], 's': ['special', 'string', 'salutation']}
+   ```
+
+1. Write a function that reads lines from two files, and writes out a new file.  You may assume that each line in the input files contain a single word.  The output file should have the words concatinated with a comma, but the two words on each line should be in alphabetical order.  If the input files have different lengths, write single words to the output file until the longer file is exhausted.
+
+    ```
+    File 1:  File2:
+    This     And
+    is       another
+    a        file
+    file
+    of
+    words
+
+    Output File:
+    And, This
+    another, is
+    a, file
+    file
+    of
+    words
+    ```
+
+1. Given a list of equal length lists, transpose it.
+
+    ```
+    [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    => [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    ```
+
 1. Given a list of numbers representing the coefficients in a polynomial (largest powers first), write a function that returns a pretty string representation of the polynomial.
 
     ```
@@ -32,13 +73,13 @@ General Programming
 Data Manipulation
 -----------------
 
-1. Given an integer numpy array of 0's and 1's, write a function that creates a new array where 0's are replaced with the word `"red"` and 1's are replaced with the word `"blue"`.
+1. (Numpy) Given an integer numpy array of 0's and 1's, write a function that creates a new array where 0's are replaced with the word `"red"` and 1's are replaced with the word `"blue"`.
 
     ```
     np.array([0, 0, 1, 0, 1]) => np.array(["red", "red", "blue", "red", "blue"])
     ```
 
-1. Given two equal length arrays, `x` with general numeric data, and `b` with only 0's and 1's, compute the mean of the data in `x` at the positions where `b == 0` and the mean of the data in `x` at the positions where `b == 1`.
+1. (Numpy) Given two equal length arrays, `x` with general numeric data, and `b` with only 0's and 1's, compute the mean of the data in `x` at the positions where `b == 0` and the mean of the data in `x` at the positions where `b == 1`.
 
     ```
     x = np.array([1, 2, 3, 4, 5])
@@ -46,9 +87,9 @@ Data Manipulation
         => {0: 3.5, 1: 4}
     ```
 
-1. Given an array `x`, and a matrix `M` (two dimensional array) with the same number of columns as the length of `x`, find the row in `M` that makes the smallest angle with `x`.
+1. (Numpy) Given an array `x`, and a matrix `M` (two dimensional array) with the same number of columns as the length of `x`, find the row in `M` that makes the smallest angle with `x`.
 
-1. Given a number `n`, create a matrix of zeros, but with ones on the diagonals immediately below and above the main diagonal.  For example, when `n=5`, you should create the following matrix
+1. Numpy) Given a number `n`, create a matrix of zeros, but with ones on the diagonals immediately below and above the main diagonal.  For example, when `n=5`, you should create the following matrix
 
     ```
     [
