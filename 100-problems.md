@@ -97,6 +97,8 @@ Data Manipulation
 
     Is this problem fully specified?  Do you have to make any choices to accomplish this task?
 
+1. Write a function that takes two numpy arrays of shapes (n, k) and (m, k), representing points in k-dimensional space, and returns an array of shape (n, m) giving the Euclidean distance between each point in the first array and each point in the second. Try to write it without any loops.
+
 Probability
 -----------
 
@@ -115,6 +117,9 @@ Probability
     ```
 
     The function should return the sampled `y` values.
+
+1. You visit a website that provides amusing data-science jokes. Each time you visit it displays a joke randomly choosen from a finite set. Over the course of four visits, you see three unique jokes and one repeat. Using maximum likelihood estimation, estimate the total number of jokes on the website.
+
 
 Statistics
 ----------
