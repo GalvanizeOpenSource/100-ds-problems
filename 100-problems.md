@@ -245,6 +245,54 @@ Algorithms
 
     Write an iterator that generates a sequence of points by applying Newton's method.  Try *not* to explicitly invert a matrix, use `np.linalg.solve` instead.
 
+3. Write a class that implements *peicewise linear regression*.  This is a linear regression, but instead of fitting a single line to the data, it fits various lines of changing slope that join up continuously.  
+
+![Piecewise Linear Regression](img/pw-regression.png)
+
+The points where it changes slope are called *knots*.  Your class should have the following structure:
+
+    ```
+    class PWLinearRegression(object):
+        """
+        Fit piecewise linear regression on data.
+        
+        Parameters
+        -------
+        Knots : Array
+            Knot locations.
+        """
+        def __init__(self, knots):
+            pass
+            
+        def fit(self,x, y):
+            """
+            Fit piecewise linear model.
+            
+            Parameters
+            ----------
+            x : 1D numpy array of data inputs
+            y : 1D numpy array of data responses
+            """
+            pass
+            
+        def predict(self, x):
+            """
+            Make predictions with fit model.
+            
+            Parameters
+            ----------
+            x : int, float, 1D array/list type of model prediction inputs.
+            
+            Returns
+            -------
+            Predicted response of x shape.
+            """
+            pass
+        ```
+
+Feel free to use any numpy or sklearn methods.
+
+
 Plotting
 --------
 
