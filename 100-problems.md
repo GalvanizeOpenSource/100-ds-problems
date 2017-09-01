@@ -221,6 +221,10 @@ Statistics
     def logistic_profit(X_train, y_train, X_test, Y_test, profit_matrix)
     ```
 
+1. You are running a popular role-playing game. In it, the players create characters that have randomly generated values for 6 different attributes, each found by summing the rolls of three 6-sided dice, so each attribute will range from 3 to 18 (higher is better).
+
+To save time you have each person generate their own characters before you get together, but you are worried some of them might cheat. Design a frequentist a/b test to investigate this. Consider the ways in which someone might cheat (in particular, cheaters don't want to get caught and might care more about some attributes than others).
+
 
 Algorithms
 ----------
