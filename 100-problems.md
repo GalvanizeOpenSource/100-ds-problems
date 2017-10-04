@@ -160,6 +160,7 @@ Data Manipulation - Pandas
 
 1. You have a pandas DataFrame containing observations of stock prices over time, it contains columns `stock`, `day` and `price`.  Create a data frame that contains the stock price for each stock on the *day after* they achieve their maximum price.
 
+
 Probability
 -----------
 
@@ -330,8 +331,51 @@ Plotting
 
     Plot each of them as vectors (as in, a picture of an arrow) whose tail is at the first coordinate, and whose head is at the second.
 
+
 SQL
 ---
+
+The following problems use tables with the following table schemas for a database keeping records of checkouts for library patrons and books.  This is only a selection of tables in the database, there are possibly many more.
+
+#### Users
+
+| column    | type    |
+|-----------|---------|
+| user_id   | int     |
+| join_date | date    |
+| branch_id | int     |
+| name      | string  |
+
+#### Books
+
+| column       | type   |
+|--------------|--------|
+| book_id      | int    |
+| author_id    | int    |
+| genere_id    | int    |
+| publish_date | date   |
+| name         | string |
+
+#### Checkouts
+
+| column        | type      |
+|---------------|-----------|
+| user_id       | int       |
+| book_id       | int       |
+| checkout_time | timestamp |
+| return_time   | timestamp |
+
+The `return_time` field may be `null` in the case that the book has not yet been returned.
+
+
+1. Write a query that returns all the users (by name) that have checked out a book within the last month.
+
+1. Write a query that returns all the users (by name) that have a currently checked out book.
+
+1. Assuming that the checkout time for a book is one month, write a query returning all users (by name) that have an overdue book.  Summarize this data to produce a list of possibly stolen books (you will have to come up with a resonable interpretation of what this means).
+
+1. Amend the prior query to return a table of all (user, book) pairs that are possibly stolen.  Identify the users and books by name in the query results.
+
 
 Web Programming
 ---------------
@@ -342,7 +386,6 @@ Web Programming
     redbubble_creators('zelda')
     redbubble_creators('eno')
     ```
-
 1. Add an optional argument, `type`, which will subset the returned artrists from the previous query to only those that have a product form the given catagory.
 
     ```
@@ -351,14 +394,12 @@ Web Programming
     # Eno shirts
     redbubble_creators('eno', type='shirt')
     ```
-
 1. Add an optional argument, `pages`, that will return search results from the given query appearing on the first `n` pages.
 
     ```
     # Zelda stickers on the first five pages
     redbubble_creators('zelda', type='sticker', pages=5)
     ```
-
 1. Read the leaderboard for [Super Metroid](http://deertier.com/Leaderboard/AnyPercentRealTime) completion times into a data frame.
 
 1. Using the leaderboards for [Ocarina of Time](http://zeldaspeedruns.com/leaderboards/oot/any), scrape data and then plot the progression of the world record over time.  That is, for each possible day, calculate the fastest submitted time up to that day.  Note that the leaderboard itself does not contain all submitted times, only the fastest submitted time for each user.  Following the hyperlink for each user in the leaderboard table will show you all the times submitted for that user, some of which may have stood as a world record in the past. 
