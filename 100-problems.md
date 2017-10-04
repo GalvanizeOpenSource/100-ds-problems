@@ -180,7 +180,7 @@ Probability
 
     The function should return the sampled `y` values.
 
-1. You visit a website that provides amusing data-science jokes. Each time you visit it displays a joke randomly choosen from a finite set. Over the course of four visits, you see three unique jokes and one repeat. Using maximum likelihood estimation, estimate the total number of jokes on the website.
+1. You visit a website that provides amusing data-science jokes. Each time you visit it displays a joke randomly chosen from a finite set. Over the course of four visits, you see three unique jokes and one repeat. Using maximum likelihood estimation, estimate the total number of jokes on the website.
 
 
 Statistics
@@ -323,7 +323,7 @@ Plotting
     +----------+----------+----------+
     ```
 
-1. Given a list pairs of ordered paris, like so:
+1. Given a list pairs of ordered pairs, like so:
 
     ```
     [[(0, 1), (1, 0)], [(1, 1), (2, 2)], [(-1, 0), (0, -1)]]
@@ -372,7 +372,7 @@ The `return_time` field may be `null` in the case that the book has not yet been
 
 1. Write a query that returns all the users (by name) that have a currently checked out book.
 
-1. Assuming that the checkout time for a book is one month, write a query returning all users (by name) that have an overdue book.  Summarize this data to produce a list of possibly stolen books (you will have to come up with a resonable interpretation of what this means).
+1. Assuming that the checkout time for a book is one month, write a query returning all users (by name) that have an overdue book.  Summarize this data to produce a list of possibly stolen books (you will have to come up with a reasonable interpretation of what this means).
 
 1. Amend the prior query to return a table of all (user, book) pairs that are possibly stolen.  Identify the users and books by name in the query results.
 
@@ -386,7 +386,7 @@ Web Programming
     redbubble_creators('zelda')
     redbubble_creators('eno')
     ```
-1. Add an optional argument, `type`, which will subset the returned artrists from the previous query to only those that have a product form the given catagory.
+1. Add an optional argument, `type`, which will subset the returned artists from the previous query to only those that have a product form the given category.
 
     ```
     # Zelda stickers
