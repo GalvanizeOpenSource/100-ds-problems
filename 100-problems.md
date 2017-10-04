@@ -87,6 +87,16 @@ Data Manipulation - Numpy
         => {0: 3.5, 1: 4}
     ```
 
+1. Write a function that consumes a two-dimensional numpy array (so, a matrix), and a label which is either "row" or "column".  The function should return a one-dimensional numpy array (vector) with either the row or column averages.
+
+    ```
+    X = np.array([[0, 1], [2, 1]])
+    row_or_column_means(X, "row")
+        => np.array([0.5, 1.5])
+    row_or_column_means(X, "column")
+        => np.array([1.0, 1.0])
+    ```
+
 1.  Given an array `x`, and a matrix `M` (two dimensional array) with the same number of columns as the length of `x`, find the row in `M` that makes the smallest angle with `x`.
 
 1.  Given a number `n`, create a matrix of zeros, but with ones on the diagonals immediately below and above the main diagonal.  For example, when `n=5`, you should create the following matrix
