@@ -336,6 +336,29 @@ SQL
 Web Programming
 ---------------
 
+1. Write a function `redbubble_creators` which takes a search string, and returns all the artists whose products appear on the first search result page when that search string is used.
+
+    ```
+    redbubble_creators('zelda')
+    redbubble_creators('eno')
+    ```
+
+1. Add an optional argument, `type`, which will subset the returned artrists from the previous query to only those that have a product form the given catagory.
+
+    ```
+    # Zelda stickers
+    redbubble_creators('zelda', type='sticker')
+    # Eno shirts
+    redbubble_creators('eno', type='shirt')
+    ```
+
+1. Add an optional argument, `pages`, that will return search results from the given query appearing on the first `n` pages.
+
+    ```
+    # Zelda stickers on the first five pages
+    redbubble_creators('zelda', type='sticker', pages=5)
+    ```
+
 1. Read the leaderboard for [Super Metroid](http://deertier.com/Leaderboard/AnyPercentRealTime) completion times into a data frame.
 
 1. Using the leaderboards for [Ocarina of Time](http://zeldaspeedruns.com/leaderboards/oot/any), scrape data and then plot the progression of the world record over time.  That is, for each possible day, calculate the fastest submitted time up to that day.  Note that the leaderboard itself does not contain all submitted times, only the fastest submitted time for each user.  Following the hyperlink for each user in the leaderboard table will show you all the times submitted for that user, some of which may have stood as a world record in the past. 
