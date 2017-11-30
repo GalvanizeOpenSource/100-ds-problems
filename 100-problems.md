@@ -70,6 +70,38 @@ General Programming
 
     Pay attention to edge cases!
 
+1. We can represent a polynomial as a list of tuples, where each tuple is a (coefficient, degree) of a single monomial.  So, for example
+
+    ```
+    [(1, 0), (1, 1), (1, 2)] => 1 + x + x^2
+    [(2, 0), (-2, 1), (2, 2), (-2, 2)] => 2 - 2x + 2x^2 -2x^2
+    [(1, 0), (1, 1), (1, 0), (1, 1)] => 1 + x + 1 + x
+    ```
+
+Write a python function to simplify these polynomial data structures by combining terms with like degree. 
+
+    ```
+    simplify_polynomial([(1, 0), (1, 1), (1, 2)])
+        => [(1, 0), (1, 1), (1, 2)]
+    simplify_polynomial([(2, 0), (-2, 1), (2, 2), (-2, 2)])
+        => [(2, 0), (-2, 1)]
+    simplify_polynomial([(1, 0), (1, 1), (1, 0), (1, 1)])
+        => [(2, 0), (2, 1)]
+    ```
+
+Notice that if a term in the simplified polynomial has degree zero, you should remove it from the resulting data structure.
+
+1. Using the same representation of polynomials as in the above problem, write a function to compute and simplify the derivative of a polynomial data structure.  If you need a reminder on how to compute the derivative of polynomials, [here](https://www.intmath.com/differentiation/5-derivative-polynomials.php) is a sufficient reference.
+
+    ```
+    differentiate_polynomial([(1, 0), (1, 1), (1, 2)])
+        => [(1, 0), (2, 1)]
+    differentiate_polynomial([(2, 0), (-2, 1), (2, 2), (-2, 2)])
+        => [(-2, 0)]
+    differentiate_polynomial([(1, 0), (1, 1), (1, 0), (1, 1)])
+        => [(1, 1)]
+    ```
+
 Data Manipulation - Numpy
 -------------------------
 
