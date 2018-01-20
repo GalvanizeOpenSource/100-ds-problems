@@ -102,6 +102,22 @@ Notice that if a term in the simplified polynomial has degree zero, you should r
         => [(1, 1)]
     ```
 
+1. Given a set containing a language of words (here we are using "language" in a technical sense, meaning "the collection of all words relevant to a task"), write a function that consumes a string of concatenated words, and returns a list of strings.  The strings in the output list should contain space separated words, where each space separated word is contained in the set defining the language.  For example:
+
+    ```
+    language = {"number", "numbers", "ship", "ships", 
+                "hip", "hips", "swear", "wear"}
+    split_into_words("number", language)
+        => ['number']
+    split_into_words("numbership", language)
+        => ['number ship', 'numbers hip']
+    split_into_words("numbershipswear", language)
+        => ['number ship swear',
+	    'number ships wear',
+	    'numbers hip swear',
+	    'numbers hips wear']
+    ```	
+
 Data Manipulation - Numpy
 -------------------------
 
@@ -135,11 +151,11 @@ Data Manipulation - Numpy
 
     ```
     [
-    [0, 1, 0, 0, 0],
-    [1, 0, 1, 0, 0],
-    [0, 1, 0, 1, 0],
-    [0, 0, 1, 0, 1],
-    [0, 0, 0, 1, 0]
+      [0, 1, 0, 0, 0],
+      [1, 0, 1, 0, 0],
+      [0, 1, 0, 1, 0],
+      [0, 0, 1, 0, 1],
+      [0, 0, 0, 1, 0]
     ]
     ```
 
@@ -155,11 +171,11 @@ Data Manipulation - Numpy
 
     ```
     [
-    [1, 0, 1, 0, 1],
-    [0, 1, 0, 1, 0],
-    [1, 0, 1, 0, 1],
-    [0, 1, 0, 1, 0],
-    [1, 0, 1, 0, 1],
+      [1, 0, 1, 0, 1],
+      [0, 1, 0, 1, 0],
+      [1, 0, 1, 0, 1],
+      [0, 1, 0, 1, 0],
+      [1, 0, 1, 0, 1],
     ]
     ```
 
@@ -235,6 +251,42 @@ Statistics
 
     You may utilize a built in function that computes the pmf or cmf of the Binomial distribution.
 
+
+1. You are running a popular role-playing game. In it, the players create characters that have randomly generated values for 6 different attributes, each found by summing the rolls of three 6-sided dice, so each attribute will range from 3 to 18 (higher is better).
+
+To save time you have each person generate their own characters before you get together, but you are worried some of them might cheat. Design a frequentist a/b test to investigate this. Consider the ways in which someone might cheat (in particular, cheaters don't want to get caught and might care more about some attributes than others).  Write your process into a function that consumes a dictionary of atrribute stats:
+
+    ```
+    test_for_cheating({'STR': 11, 'DEX': '14', 'CON': 10,
+                       'INT': 14, 'WIS': 9, 'CHR': 16})
+    ```
+
+For information on what these attribute scores mean, you may consult [this website](https://roll20.net/compendium/dnd5e/Ability%20Scores#content).
+
+
+Algorithms
+----------
+
+1. Given the following data:
+
+  - A function `f: np.array => float` that maps a numpy array to a floating point number.
+  - A function `df: np.array => np.array` that maps a numpy array to another numpy array, this is the gradient of `f`.
+  - An initial point `_0x`, stored as a numpy array.
+  - A learning rate `learning_rate`, a floating point number.
+  - A `tolerance`, floating point number.
+
+    Write an iterator `gradient_descent` (i.e. like a function, but uses `yield`) that generates the sequence of points by applying gradiend descent to the function `f`, starting at the initial point `x_0`, with the learning rate `learning_rate`, until the convergence tolerance `tolerance` is met.
+
+    ```
+    gradient_descent(f, df, x_0, learning_rate=0.01, tolerance=0.01)
+    ```
+
+2. In the same situation of the previous problem, except with the extra data
+
+  - A function `ddf: np.array => np.array` that maps a numpy array to a matrix, this is the second derivative of `f`.
+
+    Write an iterator that generates a sequence of points by applying Newton's method.  Try *not* to explicitly invert a matrix, use `np.linalg.solve` instead.
+
 1. Write a linear regression class with the following methods:
 
     ```
@@ -264,35 +316,7 @@ Statistics
     def logistic_profit(X_train, y_train, X_test, Y_test, profit_matrix)
     ```
 
-1. You are running a popular role-playing game. In it, the players create characters that have randomly generated values for 6 different attributes, each found by summing the rolls of three 6-sided dice, so each attribute will range from 3 to 18 (higher is better).
-
-To save time you have each person generate their own characters before you get together, but you are worried some of them might cheat. Design a frequentist a/b test to investigate this. Consider the ways in which someone might cheat (in particular, cheaters don't want to get caught and might care more about some attributes than others).
-
-
-Algorithms
-----------
-
-1. Given the following data:
-
-  - A function `f: np.array => float` that maps a numpy array to a floating point number.
-  - A function `df: np.array => np.array` that maps a numpy array to another numpy array, this is the gradient of `f`.
-  - An initial point `_0x`, stored as a numpy array.
-  - A learning rate `learning_rate`, a floating point number.
-  - A `tolerance`, floating point number.
-
-    Write an iterator `gradient_descent` (i.e. like a function, but uses `yield`) that generates the sequence of points by applying gradiend descent to the function `f`, starting at the initial point `x_0`, with the learning rate `learning_rate`, until the convergence tolerance `tolerance` is met.
-
-    ```
-    gradient_descent(f, df, x_0, learning_rate=0.01, tolerance=0.01)
-    ```
-
-2. In the same situation of the previous problem, except with the extra data
-
-  - A function `ddf: np.array => np.array` that maps a numpy array to a matrix, this is the second derivative of `f`.
-
-    Write an iterator that generates a sequence of points by applying Newton's method.  Try *not* to explicitly invert a matrix, use `np.linalg.solve` instead.
-
-3. Write a class that implements *peicewise linear regression*.  This is a linear regression, but instead of fitting a single line to the data, it fits various lines of changing slope that join up continuously.  
+1. Write a class that implements *peicewise linear regression*.  This is a linear regression, but instead of fitting a single line to the data, it fits various lines of changing slope that join up continuously.  
 
 ![Piecewise Linear Regression](img/pw-regression.png)
 
@@ -311,7 +335,7 @@ The points where it changes slope are called *knots*.  Your class should have th
         def __init__(self, knots):
             pass
             
-        def fit(self,x, y):
+        def fit(self, x, y):
             """
             Fit piecewise linear model.
             
@@ -338,6 +362,24 @@ The points where it changes slope are called *knots*.  Your class should have th
         ```
 
 Feel free to use any numpy or sklearn methods.
+
+1. A *hurdle model* is a special type of predictive model that is useful for data with the following structure:
+
+~[A hurdle distribution](img/mixture.png)
+
+The distribution of data above has the following interesting structure:
+
+  - A large amount of the data is *exactly* zero.
+  - Conditional on not being zero, the data follows some other distribution (in this case a continuous gamma distribution.
+
+A hurdle model is a compound model for this type of data:
+
+  - A logistic regression is used to predict the probability that a new data point falls in the zero spike, or is included in the rest of the distribution.
+  - Another model is ures to predict the target given that it is not in the spike.  A linear regression is a common choice for this model.
+
+Given that these two models are fit, the overall prediction form the hurdle model is the conditional expectation, i.e. the predicted probability from the logistic model *times* the prediction from the second model.
+
+Write an implementation of a hurdle model.  Use a class, and follow the sklearn style for model structures.
 
 
 Plotting
