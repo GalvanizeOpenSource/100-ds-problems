@@ -132,6 +132,16 @@ Notice that if a term in the simplified polynomial has degree zero, you should r
 	    'numbers hips wear']
     ```	
 
+1. A [Sudoku](https://en.wikipedia.org/wiki/Sudoku) puzzle is a nine by nine array intended to be filled with digits.  Initially, many of the cells in the array are empty, with a few containing initial digits.  The goal of the puzzle is to fill in the entire array, each cell with a digit (one through nine inclusive) so that the following rules are satisfied:
+
+  - Each row in the array contains each digit exactly one time.
+  - Each column in the array contains each digit exactly one time.
+  - Each of the nine three by three subarrays along the edges and in the center contain each digit exactly once.
+
+Write a program that solves sudoku puzzles.  Good examples of puzzles may be found at [web sudoku](https://www.websudoku.com/).
+
+This problem is impossible to brute force search, so you will need a good solution strategy.  A common solution method for this problem is [backtracking](https://en.wikipedia.org/wiki/Backtracking).
+
 Data Manipulation - Numpy
 -------------------------
 
