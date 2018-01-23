@@ -365,7 +365,7 @@ Feel free to use any numpy or sklearn methods.
 
 1. A *hurdle model* is a special type of predictive model that is useful for data with the following structure:
 
-[A hurdle distribution](img/mixture.png)
+![A hurdle distribution](img/mixture.png)
 
 The distribution of data above has the following interesting structure:
 
