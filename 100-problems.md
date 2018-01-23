@@ -60,6 +60,20 @@ General Programming
     => [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
     ```
 
+1. Suppose that, for a certain application, a valid password must satisfy these two constraints:
+
+  - The password must contain a digit (zero through nine)
+  - The password must contain one of the symbols ^!#$?-
+
+Build a valid password filterer, which will take a list of candidate passwords, and return a list with only the valid ones:
+
+```python
+possible_passwords = ['moshi', 'm0shi', 'mosh!', 'm0sh!', 
+                      '^^oshi', '^^0shi', '^^0sh!']
+get_valid_passwords(possible_passwords)
+    => ['m0sh!', '^^0shi', '^^0sh!']
+```
+
 1. Given a list of numbers representing the coefficients in a polynomial (largest powers first), write a function that returns a pretty string representation of the polynomial.
 
     ```
