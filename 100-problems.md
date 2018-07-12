@@ -156,7 +156,7 @@ Data Manipulation - Numpy
     ```
     x = np.array([1, 2, 3, 4, 5])
     b = np.array([1, 1, 0, 0, 1])
-        => {0: 3.5, 1: 4}
+        => {0: 3.5, 1: 2.6666666666666665}
     ```
 
 1. Write a function that consumes a two-dimensional numpy array (so, a matrix), and a label which is either "row" or "column".  The function should return a one-dimensional numpy array (vector) with either the row or column averages.
@@ -228,7 +228,7 @@ Data Manipulation - Pandas
 
 1. You have a pandas DataFrame `berries` which contains columns `type` and `size`.  Select all the (rows representing) blueberries larger than 0.5 cm in size.
 
-1. You have a pandas DataFrame `berries` which contains columns `type` and `size`.  Create a dataframe containing the largest berry of each size.
+1. You have a pandas DataFrame `berries` which contains columns `type` and `size`.  Create a dataframe containing the largest berry of each type.
 
 1. You have a pandas DataFrame containing observations of stock prices over time, it contains columns `stock`, `day` and `price`.  Create a data frame that contains the stock price for each stock on the *day after* they achieve their maximum price.
 
