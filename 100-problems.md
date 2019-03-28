@@ -142,6 +142,11 @@ Write a program that solves sudoku puzzles.  Good examples of puzzles may be fou
 
 This problem is impossible to brute force search, so you will need a good solution strategy.  A common solution method for this problem is [backtracking](https://en.wikipedia.org/wiki/Backtracking).
 
+1. Given a list of sets containing overlapping elements, write a function that returns a list of merged sets, such that any two sets sharing one or more elements are replaced into the union of these sets, repeatedly, until all sets are disjoint. The function should not change the original set objects.
+    ```
+    [{1, 2}, {3}, {2, 4}, {4, 6, 7}, {8}, {3, 9}] => [{1, 2, 4, 6, 7}, {3, 9}, {8}]
+    ```
+
 Data Manipulation - Numpy
 -------------------------
 
