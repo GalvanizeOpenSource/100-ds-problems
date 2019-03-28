@@ -319,15 +319,15 @@ Algorithms
 1. Write a linear regression class with the following methods:
 
     ```
-    class LinearRegression(object):
+    class LinearRegression:
 
         def __init__(self):
             self.coeffs_ = None
 
-        def fit(X, y):
+        def fit(self, X, y):
             pass
 
-        def predict(X):
+        def predict(self, X):
             pass
     ```
 
